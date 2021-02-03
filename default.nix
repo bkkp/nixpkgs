@@ -2,4 +2,6 @@
 let 
   nixpkgs = sources.nixpkgs;
 in
-  import nixpkgs { }
+  import nixpkgs { 
+    overlays = (import ./overlays { inherit sources; });
+  }
