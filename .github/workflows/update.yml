@@ -21,20 +21,20 @@ jobs:
 
     - name: Check and update sources.nix
       run: nix-shell --run "niv init"
-    - name: Make commit
+    - name: Commit changes
       continue-on-error: true
       run: git commit -am "Update sources.nix"
 
     - name: Update sources
       run: nix-shell --run "niv update"
-    - name: Make commit
+    - name: Commit changes
       continue-on-error: true
       run: git commit -am "Update niv sources"
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
       with:
-        commit-message: "[automation] Update iv dependencies"
         title: "[automation] Update niv sources"
-        branch: "automation/update-niv-dependencies"
+        body: "Daily update of Niv sources."
+        branch: "automation/update-niv-sources"
         reviewers: kfollesdal
