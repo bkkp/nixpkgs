@@ -20,6 +20,7 @@ jobs:
         git config user.email 'noreply@github.com'
 
     - name: Check and update sources.nix
+      continue-on-error: true
       run: |
         nix-shell --run "niv init"
         git commit -am "Update source.nix"
