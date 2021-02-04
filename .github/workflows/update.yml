@@ -14,17 +14,25 @@ jobs:
       with:
         name: bkkp
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+    - name: Setup git
+        run: |
+          git config user.name 'GitHub'
+          git config user.email 'noreply@github.com'
 
     - name: Check and update sources.nix
-      run: nix-shell --run "niv init"
+      run: |
+        nix-shell --run "niv init"
+        git commit -am "Update source.nix"
 
     - name: Update sources
-      run: nix-shell --run "niv update"
+      run: |
+        nix-shell --run "niv update"
+        git commit -am "Update niv sources"
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
       with:
-        commit-message: "[automation] update niv dependencies"
-        title: "[automation] update niv dependencies"
+        commit-message: "[automation] Update iv dependencies"
+        title: "[automation] Update niv sources"
         branch: "automation/update-niv-dependencies"
         reviewers: kfollesdal
