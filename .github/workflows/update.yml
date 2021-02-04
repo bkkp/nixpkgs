@@ -11,6 +11,9 @@ jobs:
       with:
         nix_path: nixpkgs=./
 
+    - name: list
+      run: ls
+
     - name: Check and update sources.nix
       run: nix-shell shell.nix --run "niv"
 
