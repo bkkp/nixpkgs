@@ -15,9 +15,9 @@ jobs:
         name: bkkp
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
     - name: Setup git
-        run: |
-          git config user.name 'GitHub'
-          git config user.email 'noreply@github.com'
+      run: |
+        git config user.name 'GitHub'
+        git config user.email 'noreply@github.com'
 
     - name: Check and update sources.nix
       run: |
