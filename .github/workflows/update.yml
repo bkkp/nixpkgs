@@ -14,7 +14,7 @@ jobs:
         nix_path: nixpkgs=./
 
     - name: Check and update sources.nix
-    - run: niv init
+      run: niv init
 
     - name: Update sources
-    - run: niv update
+      run: niv update
