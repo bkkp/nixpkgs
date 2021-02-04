@@ -2,7 +2,7 @@ name: "Update sources"
 on: 
   schedule:
     - cron:  '7 * * * *' # UTC
-  workflow_dispatch
+  workflow_dispatch:
 
 jobs:
   update:
