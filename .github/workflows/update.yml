@@ -1,6 +1,5 @@
 name: "Update sources"
-
-on: workflow_dispatch
+on: [push]
 
 jobs:
   update:
