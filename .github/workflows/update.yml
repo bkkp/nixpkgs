@@ -20,15 +20,16 @@ jobs:
         git config user.email 'noreply@github.com'
 
     - name: Check and update sources.nix
+      run: nix-shell --run "niv init"
+    - name: Make commit
       continue-on-error: true
-      run: |
-        nix-shell --run "niv init"
-        git commit -am "Update source.nix"
+      run: git commit -am "Update sources.nix"
 
     - name: Update sources
-      run: |
-        nix-shell --run "niv update"
-        git commit -am "Update niv sources"
+      run: nix-shell --run "niv update"
+    - name: Make commit
+      continue-on-error: true
+      run: git commit -am "Update niv sources"
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
