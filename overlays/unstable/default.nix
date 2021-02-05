@@ -3,5 +3,5 @@ let
   unstable = sources.unstable;
 in
   [
-    # Add imports her from unstabel to overlay
+    (import ./databricks-connect.nix { inherit unstable; })
   ]
