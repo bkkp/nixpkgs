@@ -1,8 +1,5 @@
 name: "Cach builds"
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
