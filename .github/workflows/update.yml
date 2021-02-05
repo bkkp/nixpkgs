@@ -41,3 +41,6 @@ jobs:
         body: "Daily update of Niv sources."
         branch: "automation/update-niv-sources"
         reviewers: kfollesdal
+
+    - name: Cach builds
+      run: nix-build cach.nix
