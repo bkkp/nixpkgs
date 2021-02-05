@@ -1,5 +1,5 @@
 name: "Update sources"
-on: 
+on:
   schedule:
     - cron:  '7 * * * *' # UTC
   workflow_dispatch:
@@ -41,6 +41,3 @@ jobs:
         body: "Daily update of Niv sources."
         branch: "automation/update-niv-sources"
         reviewers: kfollesdal
-
-    - name: Cach builds
-      run: nix-build cach.nix
