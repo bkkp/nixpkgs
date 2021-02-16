@@ -7,5 +7,4 @@ with pkgs; [
   python39.pkgs.databricks-connect
   python37.pkgs.typer
   python38.pkgs.typer
-  python39.pkgs.typer
 ]
