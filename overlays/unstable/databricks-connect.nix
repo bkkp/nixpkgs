@@ -4,7 +4,7 @@ let
   packageOverrides = python-self: python-super: {
     # python-super refers to the old package set and python-self to the new
     # python-super = super.python.pkgs
-    databricks-connect = python-super.callPackage "${unstable}/pkgs/development/python-modules/databricks-connect" { inherit (self.pkgs) jdk; };
+    databricks-connect = python-super.callPackage "${unstable}/pkgs/development/python-modules/databricks-connect" { inherit (super.pkgs) jdk; };
   };
 in {
   python3 = super.python3.override{ inherit packageOverrides; };
