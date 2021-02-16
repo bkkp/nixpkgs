@@ -1,4 +1,16 @@
 {
+    "actions": {
+        "branch": "main",
+        "description": "BKK Produksjon Github workflow actions",
+        "homepage": "",
+        "owner": "bkkp",
+        "repo": "actions",
+        "rev": "08fc23cf7c5749aee88ffe7c370441a155c4b975",
+        "sha256": "1w1x05aw2dz4dm04lfb8pm6s1g62m8mvqs979djar4yzyl6c6rbz",
+        "type": "tarball",
+        "url": "https://github.com/bkkp/actions/archive/08fc23cf7c5749aee88ffe7c370441a155c4b975.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "niv": {
         "branch": "master",
         "description": "Easy dependency management for Nix projects",
