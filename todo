@@ -1,0 +1,2 @@
+* Nix build all "test/check" and cache. Use checks?
+* Update auto if flake action if tests ok.

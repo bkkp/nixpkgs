@@ -1,7 +1,4 @@
-{ sources }:
-let
-  unstable = sources.unstable;
-in
+{ unstable }:
   [
     (import ./bumpver.nix { inherit unstable; })
     (import ./gh.nix { inherit unstable; })

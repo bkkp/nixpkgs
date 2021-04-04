@@ -1,5 +1,5 @@
-{ pkgs ? import ./default.nix { } }:
-with pkgs; [
+with (import ./default.nix).legacyPackages.x86_64-linux;
+[
   bumpver
   gh
   python37.pkgs.databricks-connect
