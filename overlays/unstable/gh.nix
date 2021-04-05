@@ -1,5 +1,5 @@
 { unstable }:
-self: super:
+final: prev:
 {
-  gh = super.callPackage "${unstable}/pkgs/applications/version-management/git-and-tools/gh" { };
+  gh = prev.callPackage "${unstable}/pkgs/applications/version-management/git-and-tools/gh" { };
 }

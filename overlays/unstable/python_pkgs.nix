@@ -1,9 +1,9 @@
 { unstable }:
-self: super:
+final: prev:
 let
   packageOverrides = python-self: python-super: {
 
-    databricks-connect = python-super.callPackage "${unstable}/pkgs/development/python-modules/databricks-connect" { inherit (self.pkgs) jdk; };
+    databricks-connect = python-super.callPackage "${unstable}/pkgs/development/python-modules/databricks-connect" { inherit (final.pkgs) jdk; };
 
     typer = python-super.callPackage "${unstable}/pkgs/development/python-modules/typer" { };
   };
@@ -18,8 +18,8 @@ let
     in removeAttrs all remove;
 
 in {
-  python3 = super.python3.override{ packageOverrides = filterOverrides notPython3; };
-  python37 = super.python37.override{ packageOverrides = filterOverrides notPython37; };
-  python38 = super.python38.override{ packageOverrides = filterOverrides notPython38; };
-  python39 = super.python39.override{ packageOverrides = filterOverrides notPython39; };
+  python3 = prev.python3.override{ packageOverrides = filterOverrides notPython3; };
+  python37 = prev.python37.override{ packageOverrides = filterOverrides notPython37; };
+  python38 = prev.python38.override{ packageOverrides = filterOverrides notPython38; };
+  python39 = prev.python39.override{ packageOverrides = filterOverrides notPython39; };
 }

@@ -28,14 +28,15 @@
       import nixpkgs {
         inherit system; 
         config = import ./config.nix { inherit lib; };
-        inherit overlays; 
+        overlays = lib.attrValues self.overlays;
       }
     );
 
+    # TODO: Use checks insted of cach.nix at some point
     checks = forAllSystems (system: {
       bumpver = legacyPackages.${system}.bumpver;
     });
 
   in
-    (lib.recursiveUpdate nixpkgs.outputs {inherit checks; }) // { inherit legacyPackages; };
+    (lib.recursiveUpdate nixpkgs.outputs {inherit checks overlays; }) // { inherit legacyPackages; };
 }
