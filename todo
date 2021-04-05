@@ -1,2 +1,9 @@
 * Nix build all "test/check" and cache. Use checks?
 * Update auto if flake action if tests ok.
+
+
+###########################################
+TODO
+1. GJØRE NIXPKGS til flakes
+2. i nixos config flake import bkknix og hente nixpkgs flakes fra sources i bkknix
+#######################################

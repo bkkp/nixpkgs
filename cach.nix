@@ -1,4 +1,4 @@
-with (import ./default.nix).legacyPackages.x86_64-linux;
+with import ./default.nix { };
 [
   bumpver
   gh
@@ -7,4 +7,5 @@ with (import ./default.nix).legacyPackages.x86_64-linux;
   python39.pkgs.databricks-connect
   python37.pkgs.typer
   python38.pkgs.typer
+  nixpkgs-fmt
 ]

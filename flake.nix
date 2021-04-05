@@ -5,13 +5,9 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-20.09-small";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-compat = { url = "github:edolstra/flake-compat"; flake = false; };
-
-    nixpkgs-fmt.url = "github:nix-community/nixpkgs-fmt/v1.2.0";
-    nixpkgs-fmt.inputs.nixpkgs.follows = "nixpkgs";
-    # nixpkgs-fmt.inputs.naersk.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, unstable, flake-compat, nixpkgs-fmt }:
+  outputs = { self, nixpkgs, unstable, flake-compat, }:
   let
     lib = nixpkgs.lib;
 
